@@ -35,4 +35,10 @@ function saveData(){
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
+
+function clearData() {
+    localStorage.removeItem("data");
+    listContainer.innerHTML = '';
+    console.log("Local storage cleared and list reset.");
+}
 showTask();

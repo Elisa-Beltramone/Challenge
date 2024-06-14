@@ -55,6 +55,9 @@ button{
     cursor: pointer;
     border-radius: 40px;
 }
+.clear{
+    background: rgb(72, 3, 3);
+}
 ul li{
     list-style: none;
     font-size: 17px;
