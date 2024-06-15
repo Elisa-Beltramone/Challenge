@@ -1,11 +1,11 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
-function addTask(){
-    if(inputBox.value === ''){
+function addTask() {
+    if (inputBox.value === '') {
         alert("You must write something!");
     }
-    else{
+    else {
         let li = document.createElement("li");
         li.innerHTML = inputBox.value;
         listContainer.appendChild(li);
@@ -17,28 +17,32 @@ function addTask(){
     saveData();
 }
 
-listContainer.addEventListener("click", function(e){
-    if(e.target.tagName === "LI"){
+listContainer.addEventListener("click", function (e) {
+    if (e.target.tagName === "LI") {
         e.target.classList.toggle("checked");
         saveData();
     }
-    else if(e.target.tagName === "SPAN"){
-        e.target.parentElement.remove();
-        saveData();
+    else if (e.target.tagName === "SPAN") {
+        if (confirm("Are you sure you want to remove this?")){
+            e.target.parentElement.remove();
+            saveData();
+        }
     }
 }, false);
 
-function saveData(){
+function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
-function showTask(){
+function showTask() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
 
 function clearData() {
-    localStorage.removeItem("data");
-    listContainer.innerHTML = '';
-    console.log("Local storage cleared and list reset.");
+    if (confirm("Are you sure you want to clear all tasks?")) {
+        localStorage.removeItem("data");
+        listContainer.innerHTML = '';
+    }
 }
+
 showTask();
