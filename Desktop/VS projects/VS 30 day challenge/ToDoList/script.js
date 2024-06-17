@@ -44,5 +44,12 @@ function clearData() {
         listContainer.innerHTML = '';
     }
 }
+new Sortable(listContainer, {
+    animation: 150,
+    onEnd: function (evt) {
+        saveData();
+        console.log("List reordered.");
+    }
+});
 
 showTask();
