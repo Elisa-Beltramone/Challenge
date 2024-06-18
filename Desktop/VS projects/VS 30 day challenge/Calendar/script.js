@@ -1,4 +1,4 @@
-function addTask() {
+function addNew() {
     let li = document.createElement("li");
 
     let hello = console.log("hola");

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(35deg, rgb(42, 7, 74), rgb(65, 2, 101));
+}
+.welcome{
+    text-align: center;
+    margin: 20px;
+    cursor: pointer;
+    color: rgb(18, 110, 190);
+}
