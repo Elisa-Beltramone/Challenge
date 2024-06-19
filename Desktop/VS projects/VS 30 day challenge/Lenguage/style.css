@@ -37,3 +37,7 @@ body {
     font-size: large;
     left: 70%;
 }
+
+a {
+    text-decoration: none;
+}

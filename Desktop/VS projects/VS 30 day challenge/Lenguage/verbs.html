@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Verbs</title>
+    <link rel="stylesheet" href="verbsStyle.css">
+</head>
+
+<body>
+    <div class="container">
+            <div class="exercise">
+                <h1 class="practice" id="practice" onclick="verbs()">Verbs Practice</h1>
+                <h2>Multiple Choice</h2><br />
+                <div class="question">
+                    <h3>Ich habe gestern einen Film ______.</h3>
+                    <button class="btnOption" onclick="optionSelected()" id="seh">seh</button>
+                    <button class="btnOption"  onclick="optionSelected()" id="sehen">sehen</button>
+                    <button class="btnOption"  onclick="optionSelected()" id="gesehen">gesehen</button>
+                    <button class="btnOption"  onclick="optionSelected()" id="sieht">sieht</button>
+                </div>
+                <div class="question">
+                    <h3>„Möchtest du Tee oder Kaffee?“</h3>
+                    <button class="btnOption" onclick="optionSelected()">Ja, bitte.</button>
+                    <button class="btnOption" onclick="optionSelected()">Tee, bitte.</button>
+                    <button class="btnOption" onclick="optionSelected()">Nein, danke.</button>
+                    <button class="btnOption" onclick="optionSelected()">Vielleicht.</button>
+                </div>
+                <div class="question">
+                    <h3>Was machst du heute Abend?</h3>
+                    <button class="btnOption" onclick="optionSelected()">Ich gehe ins Kino.</button>
+                    <button class="btnOption" onclick="optionSelected()">Ich gehe ins die Kino.</button>
+                    <button class="btnOption" onclick="optionSelected()">Ich gehst ins Kino.</button>
+                    <button class="btnOption" onclick="optionSelected()">Ich geht ins Kino.</button>
+                </div>
+            
+                <div class="question">
+                    <h3>Das ist ______ Auto. (er)</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q4')">sein</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q4')">sein's</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q4')">ihre</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q4')">ihren</button>
+                </div>
+        
+                <div class="question">
+                    <h3>Er wird nach Berlin ______.</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q5')">fahren morgen</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q5')">morgen fahren</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q5')">morgen wird fahren</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q5')">wird morgen fahren</button>
+                </div>        
+                <div class="question">
+                    <h3>Ich freue mich ______ deinen Besuch.</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q7')">an</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q7')">auf</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q7')">für</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q7')">nach</button>
+                </div>
+        
+                <div class="question">
+                    <h3>Wir ______ im Sommer nach Italien.</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q8')">fahrst</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q8')">fahren</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q8')">fahrst</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q8')">fährt</button>
+                </div>
+        
+                <div class="question">
+                    <h3>Das Buch ______ auf dem Tisch.</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q9')">liegt</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q9')">liege</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q9')">liegen</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q9')">gelegen</button>
+                </div>
+        
+                <div class="question">
+                    <h3>Der Hund ist sehr ______.</h3>
+                    <button class="btnOption" onclick="optionSelected(this, 'q10')">freundlich</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q10')">freundliche</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q10')">freundlicher</button>
+                    <button class="btnOption" onclick="optionSelected(this, 'q10')">freundliches</button>
+                </div>
+                <button class="submit">Submit</button>
+
+            </div>
+    </div>
+        <script src="verbsScript.js"></script>
+</body>
+
+</html>
