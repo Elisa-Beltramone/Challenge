@@ -1,13 +1,39 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:  sans-serif;
 }
 body {
-    background: linear-gradient(35deg, rgb(42, 7, 74), rgb(65, 2, 101));
+    background: linear-gradient(35deg, rgb(120, 17, 217), rgb(149, 8, 230));
 }
 .welcome{
     text-align: center;
-    margin: 20px;
+    margin: 30px;
     cursor: pointer;
-    color: rgb(18, 110, 190);
+    color: rgb(169, 7, 26);
+}
+.container {
+    background-color: rgb(7, 147, 147);
+    color: rgb(255, 255, 255);
+    margin: 40px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.column button{
+    position: relative;
+    padding: 15px;
+    background-color: rgb(59, 5, 67);
+    color: white;
+    border-radius: 12px;
+    font-size: large;
+    left: 70%;
 }

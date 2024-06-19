@@ -8,3 +8,6 @@ function welcome() {
     }
 }
 
+function translate() {
+
+}
