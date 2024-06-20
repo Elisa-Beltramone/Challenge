@@ -9,6 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .practice {
@@ -21,7 +22,7 @@ body {
 .container {
     background-color: rgb(7, 147, 147);
     color: rgb(255, 255, 255);
-    margin: 40px;
+    margin: 20px;
     padding: 30px;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -63,3 +64,8 @@ button {
     background-color: aqua;
 }
 
+.nav {
+    background-color: black;
+    padding: 10px;
+    width: 100%;
+}

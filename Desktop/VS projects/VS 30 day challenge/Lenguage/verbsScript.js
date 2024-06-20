@@ -5,6 +5,7 @@ let gesehen = document.getElementById("gesehen");
 let sieht = document.getElementById("sieht");
 const allButtons = document.querySelectorAll('.btnOption');
 let selectedOption = 0;
+let answerQ1 = document.getElementById("answerQ1");
 
 function verbs() {
     if (practice.innerHTML == "Verbs Practice") {
@@ -19,25 +20,26 @@ allButtons.forEach(bt =>{
         selectedOption = e.target.innerHTML;
         console.log(selectedOption);
         if(selectedOption=="gesehen"){
-            alert("Well done!")
+            answerQ1.innerHTML = "Correct"
+            
         }else if(selectedOption=="Tee, bitte."){
-            alert("Well done!")
+            answerQ2.innerHTML = "Correct"
         }else if(selectedOption=="Ich gehe ins Kino."){
-            alert("Well done!")
+            answerQ3.innerHTML = "Correct"
         }else if(selectedOption=="sein"){
-            alert("Well done!")
+            answerQ4.innerHTML = "Correct"
         }else if(selectedOption=="wird morgen fahren"){
-            alert("Well done!")
+            answerQ5.innerHTML = "Correct"
         }else if(selectedOption=="auf"){
-            alert("Well done!")
+            answerQ6.innerHTML = "Correct"
         }else if(selectedOption=="fahren"){
-            alert("Well done!")
+            answerQ7.innerHTML = "Correct"
         }else if(selectedOption=="liegt"){
-            alert("Well done!")
+            answerQ8.innerHTML = "Correct"
         }else if(selectedOption=="freundlich"){
-            alert("Well done!")
+            answerQ9.innerHTML = "Correct"
         }else{
-            alert("Try again.")
+            answerQ1.innerHTML = "Try again."
         }
     })
 });
