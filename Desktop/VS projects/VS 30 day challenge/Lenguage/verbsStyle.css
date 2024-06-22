@@ -34,7 +34,7 @@ body {
     max-width: 500px;
 }
 
-.question {
+.question1, .question2, .question3, .question4, .question5, .question6, .question7, .question8, .question9 {
     padding: 10px;
     border: solid 2px rgb(5, 43, 80);
     border-radius: 20px;
@@ -60,12 +60,16 @@ button {
     background-color: rgb(15, 151, 209);
     color: black;
 }
-.submit:hover{
-    background-color: aqua;
-}
-
 .nav {
     background-color: black;
     padding: 10px;
     width: 100%;
 }
+.submit:hover{
+    background-color: aqua;
+}
+
+.question1 button:focus {
+    background-color: rgb(109, 32, 135);
+}
+
