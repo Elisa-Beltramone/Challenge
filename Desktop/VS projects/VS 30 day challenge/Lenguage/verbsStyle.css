@@ -34,7 +34,7 @@ body {
     max-width: 500px;
 }
 
-.question1, .question2, .question3, .question4, .question5, .question6, .question7, .question8, .question9 {
+.question {
     padding: 10px;
     border: solid 2px rgb(5, 43, 80);
     border-radius: 20px;
@@ -51,10 +51,6 @@ button {
     font-size: large;
 }
 
-.question button:hover {
-    background-color: rgb(109, 32, 135);
-}
-
 .submit{
     position: relative;
     background-color: rgb(15, 151, 209);
@@ -69,7 +65,10 @@ button {
     background-color: aqua;
 }
 
-.question1 button:focus {
+.question button:hover {
     background-color: rgb(109, 32, 135);
 }
 
+.special{
+    background-color: rgb(109, 32, 135);
+}

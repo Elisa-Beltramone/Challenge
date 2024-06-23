@@ -16,83 +16,88 @@
         <div class="exercise">
             <h1 class="practice" id="practice" onclick="verbs()">Verbs Practice</h1>
             <h2>Multiple Choice</h2><br />
-            <div class="question1">
+            <div class="question" data-question="q1">
                 <h3>Ich habe gestern einen Film ______.</h3>
-                <button class="btnOption" onclick="optionSelected()" id="seh">seh</button>
-                <button class="btnOption" onclick="optionSelected()" id="sehen">sehen</button>
-                <button class="btnOption" onclick="optionSelected()" id="gesehen">gesehen</button>
-                <button class="btnOption" onclick="optionSelected()" id="sieht">sieht</button>
-                <h3 id="answerQ1"></h3>
+                <button class="btnOption" data-answer="seh">seh</button>
+                <button class="btnOption" data-answer="sehen">sehen</button>
+                <button class="btnOption" data-answer="gesehen">gesehen</button>
+                <button class="btnOption" data-answer="sieht">sieht</button>
+                <h3 class="answer" id="answerQ1"></h3>
             </div>
-            <div class="question2">
+
+            <div class="question" data-question="q2">
                 <h3>„Möchtest du Tee oder Kaffee?“</h3>
-                <button class="btnOption" onclick="optionSelected()">Ja, bitte.</button>
-                <button class="btnOption" onclick="optionSelected()">Tee, bitte.</button>
-                <button class="btnOption" onclick="optionSelected()">Nein, danke.</button>
-                <button class="btnOption" onclick="optionSelected()">Vielleicht.</button>
-                <h3 id="answerQ2"></h3>
+                <button class="btnOption" data-answer="Ja, bitte.">Ja, bitte.</button>
+                <button class="btnOption" data-answer="Tee, bitte.">Tee, bitte.</button>
+                <button class="btnOption" data-answer="Nein, danke.">Nein, danke.</button>
+                <button class="btnOption" data-answer="Vielleicht.">Vielleicht.</button>
+                <h3 class="answer" id="answerQ2"></h3>
             </div>
-            <div class="question3">
+            <div class="question" data-question="q3">
                 <h3>Was machst du heute Abend?</h3>
-                <button class="btnOption" onclick="optionSelected()">Ich gehe ins Kino.</button>
-                <button class="btnOption" onclick="optionSelected()">Ich gehe ins die Kino.</button>
-                <button class="btnOption" onclick="optionSelected()">Ich gehst ins Kino.</button>
-                <button class="btnOption" onclick="optionSelected()">Ich geht ins Kino.</button>
-                <h3 id="answerQ3"></h3>
+                <button class="btnOption" data-answer="Ich gehe ins Kino.">Ich gehe ins Kino.</button>
+                <button class="btnOption" data-answer="Ich gehe ins die Kino.">Ich gehe ins die Kino.</button>
+                <button class="btnOption" data-answer="Ich gehst ins Kino.">Ich gehst ins Kino.</button>
+                <button class="btnOption" data-answer="Ich geht ins Kino.">Ich geht ins Kino.</button>
+                <h3 class="answer" id="answerQ3"></h3>
             </div>
-            <div class="question4">
+
+            <div class="question" data-question="q4">
                 <h3>Das ist ______ Auto. (er)</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q4')">sein</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q4')">sein's</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q4')">ihre</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q4')">ihren</button>
-                <h3 id="answerQ4"></h3>
+                <button class="btnOption" data-answer="sein">sein</button>
+                <button class="btnOption" data-answer="sein's">sein's</button>
+                <button class="btnOption" data-answer="ihre">ihre</button>
+                <button class="btnOption" data-answer="ihren">ihren</button>
+                <h3 class="answer" id="answerQ4"></h3>
             </div>
 
-            <div class="question5">
+            <div class="question" data-question="q5">
                 <h3>Er wird nach Berlin ______.</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q5')">fahren morgen</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q5')">morgen fahren</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q5')">morgen wird fahren</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q5')">wird morgen fahren</button>
-                <h3 id="answerQ5"></h3>
+                <button class="btnOption" data-answer="fahren morgen">fahren morgen</button>
+                <button class="btnOption" data-answer="morgen fahren">morgen fahren</button>
+                <button class="btnOption" data-answer="morgen wird fahren">morgen wird fahren</button>
+                <button class="btnOption" data-answer="wird morgen fahren">wird morgen fahren</button>
+                <h3 class="answer" id="answerQ5"></h3>
             </div>
-            <div class="question6">
+
+            <div class="question" data-question="q6">
                 <h3>Ich freue mich ______ deinen Besuch.</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q7')">an</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q7')">auf</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q7')">für</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q7')">nach</button>
-                <h3 id="answerQ6"></h3>
+                <button class="btnOption" data-answer="an">an</button>
+                <button class="btnOption" data-answer="auf">auf</button>
+                <button class="btnOption" data-answer="für">für</button>
+                <button class="btnOption" data-answer="nach">nach</button>
+                <h3 class="answer" id="answerQ6"></h3>
             </div>
 
-            <div class="question7">
+            <div class="question" data-question="q7">
                 <h3>Wir ______ im Sommer nach Italien.</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q8')">fahrst</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q8')">fahren</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q8')">fahrst</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q8')">fährt</button>
-                <h3 id="answerQ7"></h3>
+                <button class="btnOption" data-answer="fahrst">fahrst</button>
+                <button class="btnOption" data-answer="fahren">fahren</button>
+                <button class="btnOption" data-answer="fahrst">fahrst</button>
+                <button class="btnOption" data-answer="fährt">fährt</button>
+                <h3 class="answer" id="answerQ7"></h3>
             </div>
 
-            <div class="question8">
+            <div class="question" data-question="q8">
                 <h3>Das Buch ______ auf dem Tisch.</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q9')">liegt</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q9')">liege</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q9')">liegen</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q9')">gelegen</button>
-                <h3 id="answerQ8"></h3>
+                <button class="btnOption" data-answer="liegt">liegt</button>
+                <button class="btnOption" data-answer="liege">liege</button>
+                <button class="btnOption" data-answer="liegen">liegen</button>
+                <button class="btnOption" data-answer="gelegen">gelegen</button>
+                <h3 class="answer" id="answerQ8"></h3>
             </div>
 
-            <div class="question9">
+            <div class="question" data-question="q9">
                 <h3>Der Hund ist sehr ______.</h3>
-                <button class="btnOption" onclick="optionSelected(this, 'q10')">freundlich</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q10')">freundliche</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q10')">freundlicher</button>
-                <button class="btnOption" onclick="optionSelected(this, 'q10')">freundliches</button>
-                <h3 id="answerQ9"></h3>
+                <button class="btnOption" data-answer="freundlich">freundlich</button>
+                <button class="btnOption" data-answer="freundliche">freundliche</button>
+                <button class="btnOption" data-answer="freundlicher">freundlicher</button>
+                <button class="btnOption" data-answer="freundliches">freundliches</button>
+                <h3 class="answer" id="answerQ9"></h3>
             </div>
-            <button class="submit">Submit</button>
+
+            <button class="submit" id="submit" onclick="submit()">Submit</button>
+            <div id="result"></div>
 
         </div>
     </div>
