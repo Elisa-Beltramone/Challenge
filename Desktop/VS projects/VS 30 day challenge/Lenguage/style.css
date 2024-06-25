@@ -17,9 +17,6 @@ body {
     color: rgb(255, 255, 255);
     margin: 40px;
     padding: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .column {
