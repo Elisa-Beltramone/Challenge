@@ -30,7 +30,12 @@ body {
 .exercise {
     text-align: center;
     padding: 5px;
-    max-width: 500px;
+    max-width: 700px;
+}
+
+img{
+    width: 220px;
+    height: 200px;
 }
 
 button {
@@ -43,25 +48,13 @@ button {
     font-size: large;
 }
 
-.submit{
-    position: relative;
-    background-color: rgb(15, 151, 209);
-    color: black;
-}
 .nav {
     background-color: black;
     padding: 10px;
     width: 100%;
 }
-.submit:hover{
-    background-color: aqua;
-}
 
 button:hover {
-    background-color: rgb(109, 32, 135);
-}
-
-.special{
     background-color: rgb(109, 32, 135);
 }
 
@@ -70,4 +63,19 @@ button:hover {
 }
 
 .grid{
+}
+
+.names{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    font-size: 22px;
+    gap: 15px; 
+    color: rgb(91, 15, 124);
+}
+
+.names h3:hover{
+    color: rgb(8, 68, 90);
+    cursor: pointer;
 }

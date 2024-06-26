@@ -15,17 +15,26 @@
     <div class="container">
         <div class="exercise">
             <h1 class="practice" id="playing" onclick="play()">Playing time</h1>
-                <button onclick="show()">Start</button>
-                <div class="column" id="game">
+            <button id="goodLuck" onclick="gameStart()">Start</button>
+            <div class="column" id="game">
+                <p id="time"></p><br />
                 <div class="grid" id="grid">
-                    <img src="animals/caballo.jpeg">
-                    <img src="animals/ballena.jpeg">
-                    <img src="animals/mono.jpeg">
-                    <img src="animals/conejo.jpeg">
-                    <img src="animals/tortuga.jpeg">
-                    <img src="animals/pajaro.jpeg">
+                    <img id="imgHorse" src="animals/caballo.jpeg">
+                    <img id="imgWhale" src="animals/ballena.jpeg">
+                    <img id="imgMonkey" src="animals/mono.jpeg">
+                    <img id="imgRabbit" src="animals/conejo.jpeg">
+                    <img id="imgTurtle" src="animals/tortuga.jpeg">
+                    <img id="imgBird" src="animals/pajaro.jpeg">
                 </div>
-
+                <div class="names">
+                    <h3 id="horse">Pferd</h3>
+                    <h3 id="rabbit">Kaninchen</h3>
+                    <h3 id="turtle">Schildkröte</h3>
+                    <h3 id="monkey">Affe</h3>
+                    <h3 id="bird">Vogel</h3>
+                    <h3 id="whale">Wal</h3>
+                </div>
+                <button id="reset">Try again</button>
             </div>
         </div>
         <script src="playing.js"></script>
