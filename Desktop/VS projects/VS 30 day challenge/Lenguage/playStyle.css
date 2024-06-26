@@ -25,20 +25,12 @@ body {
     margin: 20px;
     padding: 30px;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .exercise {
     text-align: center;
     padding: 5px;
     max-width: 500px;
-}
-
-.question {
-    padding: 10px;
-    border: solid 2px rgb(5, 43, 80);
-    border-radius: 20px;
-    margin: 1px;
 }
 
 button {
@@ -65,7 +57,7 @@ button {
     background-color: aqua;
 }
 
-.question button:hover {
+button:hover {
     background-color: rgb(109, 32, 135);
 }
 
@@ -73,6 +65,9 @@ button {
     background-color: rgb(109, 32, 135);
 }
 
-.grid {
+.column {
     display: none;
+}
+
+.grid{
 }

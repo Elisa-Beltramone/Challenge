@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice Verbs</title>
+    <title>Leseverständnis Text</title>
     <link rel="stylesheet" href="verbsStyle.css">
 </head>
 
@@ -14,45 +14,117 @@
     </nav>
     <div class="container">
         <div class="exercise">
-            <h1 class="practice" id="practice" onclick="verbs()">Verbs Practice</h1>
-            <h2>Reading Comprehension</h2><br />
-            <p>
-                Text:
-                Jeden Morgen fährt Peter mit dem Fahrrad zur Arbeit. Er genießt die frische Luft und die Ruhe am Morgen. Der Weg zur Arbeit führt durch einen Park, wo er oft viele Leute joggen oder mit ihren Hunden spazieren sieht. Obwohl der Weg manchmal anstrengend ist, fühlt sich Peter danach immer erfrischt und bereit für den Tag.
+            <h1 class="practice" id="reading" onclick="reading()">Leseverständnis Text</h1>
+            <h3>Der Einfluss von sozialen Medien auf die moderne Kommunikation</h3><br />
+            <p>In den letzten Jahren haben soziale Medien die Art und Weise, wie Menschen kommunizieren, dramatisch
+                verändert. Plattformen wie Facebook, Twitter, Instagram und LinkedIn sind für Millionen von Menschen auf
+                der ganzen Welt zu einem integralen Bestandteil des täglichen Lebens geworden. Diese Transformation
+                beschränkt sich nicht nur auf persönliche Interaktionen, sondern hat auch die beruflichen und
+                schulischen Bereiche erheblich beeinflusst.</p><br />
+
+            <p>Eine der tiefgreifendsten Veränderungen, die durch soziale Medien herbeigeführt wurden, ist die
+                Geschwindigkeit, mit der Informationen verbreitet werden können. Nachrichten, Trends und Updates werden
+                sofort geteilt, sodass Menschen in Echtzeit über globale Ereignisse informiert bleiben. Diese
+                Unmittelbarkeit hat sowohl positive als auch negative Auswirkungen. Einerseits fördert sie ein größeres
+                Bewusstsein und eine stärkere Vernetzung; andererseits kann sie zur Verbreitung von Fehlinformationen
+                und Fake News beitragen.</p><br />
+
+            <p>Darüber hinaus haben soziale Medien die Dynamik sozialer Beziehungen verändert. Sie haben es einfacher
+                gemacht, Verbindungen zu entfernten Freunden und Verwandten aufrechtzuerhalten und geografische Lücken
+                zu überbrücken. Allerdings gibt es auch Bedenken hinsichtlich der Qualität dieser Interaktionen. Einige
+                argumentieren, dass die Online-Kommunikation nicht die Tiefe und Authentizität von Gesprächen von
+                Angesicht zu Angesicht hat und möglicherweise zu oberflächlichen Beziehungen führt.</p><br />
+
+            <p>Im beruflichen Bereich haben Plattformen wie LinkedIn das Networking und die Jobsuche revolutioniert.
+                Arbeitgeber und Arbeitnehmer können weltweit Kontakte knüpfen, Einblicke teilen und Chancen entdecken.
+                Dies hat zu einem dynamischeren und wettbewerbsfähigeren Arbeitsmarkt geführt, in dem digitale Präsenz
+                und Networking-Fähigkeiten zunehmend wichtig sind.</p><br />
+
+            <p>Auch im Bildungsbereich haben soziale Medien einen erheblichen Einfluss gehabt. Viele Pädagogen nutzen
+                Plattformen wie YouTube und Twitter, um das Lernen zu verbessern, Ressourcen zu teilen und auf
+                innovative Weise mit Schülern zu interagieren. Trotz dieser Vorteile gibt es eine laufende Debatte über
+                die potenziellen Ablenkungen, die soziale Medien für Schüler darstellen können, und die möglicherweise
+                ihre Konzentration und akademische Leistung beeinträchtigen.</p><br />
+
+            <p>Insgesamt bieten soziale Medien zahlreiche Vorteile in Bezug auf Kommunikation und Vernetzung, stellen
+                jedoch auch Herausforderungen dar, die sorgfältig gemanagt werden müssen. Der Schlüssel liegt darin, ein
+                Gleichgewicht zu finden, das die Vorteile maximiert und die Nachteile minimiert.</p><br />
+
+                <h3>Fragen:</h3><br />
                 
-                Questions:
+                <p>Was ist die Hauptidee des Textes?</p>
+                <input type="radio" name="question1" id="question1A">
+                <label for="question1A">A- Soziale Medien werden hauptsächlich zur Unterhaltung genutzt.</label><br />
+                <input type="radio" name="question1" id="question1B">
+                <label for="question1B">B- Soziale Medien haben die persönliche, berufliche und schulische Kommunikation verändert.</label><br />
+                <input type="radio" name="question1" id="question1C">
+                <label for="question1C">C- Soziale Medien sind nur für persönliche Interaktionen von Vorteil.</label><br />
+                <input type="radio" name="question1" id="question1D">
+                <label for="question1D">D- Soziale Medien haben negative Auswirkungen auf die Kommunikation.</label><br />
+                <button id="answer1" onclick="isCorrect()">Answer</button><br />
+
+                <p>Welche der folgenden Plattformen wird NICHT als integraler Bestandteil des täglichen Lebens erwähnt?</p>
+                <input type="radio" name="question2" id="question2A">
+                <label for="question2A">A- Facebook</label><br />
+                <input type="radio" name="question2" id="question2B">
+                <label for="question2B">B- Twitter</label><br />
+                <input type="radio" name="question2" id="question2C">
+                <label for="question2C">C- Instagram</label><br />
+                <input type="radio" name="question2" id="question2D">
+                <label for="question2D">D- TikTok</label><br />
+                <button id="answer2" onclick="isCorrect()">Answer</button><br />
+
+                <p>Was ist eine positive Auswirkung der Geschwindigkeit, mit der Informationen in sozialen Medien geteilt werden?</p>
+                <input type="radio" name="question3" id="question3A">
+                <label for="question3A">A- Verbreitung von Fehlinformationen</label><br />
+                <input type="radio" name="question3" id="question3B">
+                <label for="question3B">B- Größeres Bewusstsein und stärkere Vernetzung</label><br />
+                <input type="radio" name="question3" id="question3C">
+                <label for="question3C">C- Zunahme oberflächlicher Beziehungen</label><br />
+                <input type="radio" name="question3" id="question3D">
+                <label for="question3D">D- Ablenkung von schulischen Aufgaben</label><br />
+                <button id="answer3" onclick="isCorrect()">Answer</button><br />
+
+                <p>Wie hat LinkedIn den beruflichen Bereich beeinflusst?</p>
+                <input type="radio" name="question4" id="question4A">
+                <label for="question4A">A- Es hat die Bedeutung des Networkings reduziert.</label><br />
+                <input type="radio" name="question4" id="question4B">
+                <label for="question4B">B- Es hat die Jobmöglichkeiten eingeschränkt.</label><br />
+                <input type="radio" name="question4" id="question4C">
+                <label for="question4C">C- Es hat das Networking und die Jobsuche revolutioniert.</label><br />
+                <input type="radio" name="question4" id="question4D">
+                <label for="question4D">D- Es hat keine bedeutende Auswirkung gehabt.</label><br />
+                <button id="answer4" onclick="isCorrect()">Answer</button><br />
+
+                <p>Welche Sorge wird in Bezug auf die Online-Kommunikation in sozialen Beziehungen geäußert?</p>
+                <input type="radio" name="question5" id="question5A">
+                <label for="question5A">A- Sie ist immer besser als die Kommunikation von Angesicht zu Angesicht.</label><br />
+                <input type="radio" name="question5" id="question5B">
+                <label for="question5B">B- Sie kann zu oberflächlichen Beziehungen führen.</label><br />
+                <input type="radio" name="question5" id="question5C">
+                <label for="question5C">C- Sie ist teurer als traditionelle Kommunikation.</label><br />
+                <input type="radio" name="question5" id="question5D">
+                <label for="question5D">D- Sie überbrückt geografische Lücken.</label><br />
+                <button id="answer5" onclick="isCorrect()">Answer</button><br />
+ 
+                <p>Wie nutzen Pädagogen laut dem Text soziale Medien?</p>
+                <input type="radio" name="question6" id="question6A">
+                <label for="question6A">A- Sie verbieten sie in Klassenzimmern.</label><br />
+                <input type="radio" name="question6" id="question6B">
+                <label for="question6B">B- Sie nutzen sie, um das Lernen zu verbessern und Ressourcen zu teilen.</label><br />
+                <input type="radio" name="question6" id="question6C">
+                <label for="question6C">C- Sie ignorieren sie komplett.</label><br />
+                <input type="radio" name="question6" id="question6D">
+                <label for="question6D">D- Sie verwenden sie nur für administrative Aufgaben.</label><br />
                 
-                    Wie fährt Peter zur Arbeit?
-                    Was genießt Peter am Morgen?
-                    Wen sieht er oft im Park?
-                    Wie fühlt sich Peter nach dem Weg zur Arbeit?</p>
+                <button id="answer6" onclick="isCorrect()">Answer</button><br />
 
             <button class="submit" id="submit" onclick="submit()">Submit</button>
             <div id="result"></div>
 
         </div>
     </div>
-    <script src="verbsScript.js"></script>
+    <script src="readingScript.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
