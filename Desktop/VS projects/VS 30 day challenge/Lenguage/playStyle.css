@@ -38,6 +38,11 @@ img{
     height: 200px;
 }
 
+img:hover {
+    border: 2px solid black;
+    cursor: pointer;
+}
+
 button {
     margin: 20px 10px;
     padding: 8px;
@@ -60,9 +65,6 @@ button:hover {
 
 .column {
     display: none;
-}
-
-.grid{
 }
 
 .names{

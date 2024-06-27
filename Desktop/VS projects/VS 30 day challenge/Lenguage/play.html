@@ -15,25 +15,27 @@
     <div class="container">
         <div class="exercise">
             <h1 class="practice" id="playing" onclick="play()">Playing time</h1>
+            <p>Match the name with the picture</p><br/>
             <button id="goodLuck" onclick="gameStart()">Start</button>
             <div class="column" id="game">
                 <p id="time"></p><br />
                 <div class="grid" id="grid">
-                    <img id="imgHorse" src="animals/caballo.jpeg">
-                    <img id="imgWhale" src="animals/ballena.jpeg">
-                    <img id="imgMonkey" src="animals/mono.jpeg">
-                    <img id="imgRabbit" src="animals/conejo.jpeg">
-                    <img id="imgTurtle" src="animals/tortuga.jpeg">
-                    <img id="imgBird" src="animals/pajaro.jpeg">
+                    <img class="card" id="imgHorse" src="animals/caballo.jpeg">
+                    <img class="card" id="imgWhale" src="animals/ballena.jpeg">
+                    <img class="card" id="imgMonkey" src="animals/mono.jpeg">
+                    <img class="card" id="imgRabbit" src="animals/conejo.jpeg">
+                    <img class="card" id="imgTurtle" src="animals/tortuga.jpeg">
+                    <img class="card" id="imgBird" src="animals/pajaro.jpeg">
                 </div>
                 <div class="names">
-                    <h3 id="horse">Pferd</h3>
-                    <h3 id="rabbit">Kaninchen</h3>
-                    <h3 id="turtle">Schildkröte</h3>
-                    <h3 id="monkey">Affe</h3>
-                    <h3 id="bird">Vogel</h3>
-                    <h3 id="whale">Wal</h3>
+                    <h3 class="name" id="horse">Pferd</h3>
+                    <h3 class="name" id="rabbit">Kaninchen</h3>
+                    <h3 class="name" id="turtle">Schildkröte</h3>
+                    <h3 class="name" id="monkey">Affe</h3>
+                    <h3 class="name" id="bird">Vogel</h3>
+                    <h3 class="name" id="whale">Wal</h3>
                 </div>
+                <p id="score">Score</p>
                 <button id="reset">Try again</button>
             </div>
         </div>

@@ -3,26 +3,31 @@ let english = true;
 let start = document.getElementById("game");
 let luck = document.getElementById("goodLuck");
 
-function play(){
-    if(english == true){
+function play() {
+    if (english == true) {
         playing.innerHTML = "Spielzeit";
-        english=false;
-    } else{
+        english = false;
+    } else {
         playing.innerHTML = "Playing time";
-        english= true;
+        english = true;
     }
 };
 
-function gameStart(){
-    timerId = setInterval(show, 1000);
-}
+let timeStart = null;
 
-function show(){
+function gameStart() {
+    timerId = setInterval(show, 0);
+    timeStart = new Date();
+}
+let timer = document.getElementById("time");
+let currentTime = null;
+let timeElapsed = null;
+function show() {
     start.style.display = 'block';
-    luck.innerHTML = "Good Luck!";
-    const d = new Date();
-    document.getElementById("time").innerHTML = d.toLocaleTimeString();
-    match();
+    luck.style.display = "none";
+    currentTime = new Date();
+    timeElapsed = currentTime - timeStart;
+    timer.innerHTML = Math.floor(timeElapsed / 1000) + "s";
 };
 
 let horse = document.getElementById('horse');
@@ -35,66 +40,120 @@ const whale = document.getElementById('whale');
 let imgHorse = document.getElementById('imgHorse');
 let imgRabbit = document.getElementById('imgRabbit');
 let imgTurtle = document.getElementById('imgTurtle');
-const imgMonkey = document.getElementById('imgMonkey');
-const imgBird = document.getElementById('imgBird');
-const imgWhale = document.getElementById('imgWhale');
+let imgMonkey = document.getElementById('imgMonkey');
+let imgBird = document.getElementById('imgBird');
+let imgWhale = document.getElementById('imgWhale');
 
-function match(){
-    if(horse == imgHorse){
-        horse.style.color = 'green';
-        return("well done");
-    }    
-}
+let scoreElement = document.getElementById('score');
+let score = 0;
 
-imgHorse.addEventListener("click", function() {
+function showWellDone() {
+    score = score + 1;
+    scoreElement.textContent = "Score: " + score + ". Well done!";
+    if (score === 6) {
+        scoreElement.textContent = "Your final score is: " + score + ". Congratulations!";
+        clearInterval(timerId);    }
+};
+
+imgHorse.addEventListener("click", function () {
     imgHorse.style.border = '2px solid black';
 });
 
-imgRabbit.addEventListener("click", function() {
+imgRabbit.addEventListener("click", function () {
     imgRabbit.style.border = '2px solid black';
 });
 
-imgTurtle.addEventListener("click", function() {
+imgTurtle.addEventListener("click", function () {
     imgTurtle.style.border = '2px solid black';
 });
 
-imgMonkey.addEventListener("click", function() {
+imgMonkey.addEventListener("click", function () {
     imgMonkey.style.border = '2px solid black';
 });
 
-imgBird.addEventListener("click", function() {
+imgBird.addEventListener("click", function () {
     imgBird.style.border = '2px solid black';
 });
 
-imgWhale.addEventListener("click", function() {
+imgWhale.addEventListener("click", function () {
     imgWhale.style.border = '2px solid black';
 });
 
 
-document.getElementById('horse').addEventListener("click", function() {
-    document.getElementById('horse').style.color = 'green';
+horse.addEventListener("click", function () {
+    horse.style.color = 'green';
 });
 
-document.getElementById('rabbit').addEventListener("click", function() {
-    document.getElementById('rabbit').style.color = 'green';
+rabbit.addEventListener("click", function () {
+    rabbit.style.color = 'green';
 });
 
-document.getElementById('turtle').addEventListener("click", function() {
-    document.getElementById('turtle').style.color = 'green';
+turtle.addEventListener("click", function () {
+    turtle.style.color = 'green';
 });
 
-document.getElementById('monkey').addEventListener("click", function() {
-    document.getElementById('monkey').style.color = 'green';
+monkey.addEventListener("click", function () {
+    monkey.style.color = 'green';
 });
 
-document.getElementById('bird').addEventListener("click", function() {
-    document.getElementById('bird').style.color = 'green';
+bird.addEventListener("click", function () {
+    bird.style.color = 'green';
 });
 
-document.getElementById('whale').addEventListener("click", function() {
-    document.getElementById('whale').style.color = 'green';
+whale.addEventListener("click", function () {
+    whale.style.color = 'green';
 });
 
-document.getElementById('reset').addEventListener('click', function() {
+document.getElementById('reset').addEventListener('click', function () {
     location.reload();
 });
+
+let cardChosen = null;
+let nameChosen = null;
+let selected = null;
+let word = null;
+let card = null;
+
+
+const words = document.querySelectorAll('.name');
+const cards = document.querySelectorAll('.card');
+
+words.forEach(bt => {
+    bt.addEventListener('click', (e) => {
+        nameChosen = e.target.id;
+        word = e.target;
+        console.log(e.target.id);
+        checkMatch();
+    })
+});
+
+const idMap = {
+    imgHorse: 'horse',
+    imgWhale: 'whale',
+    imgMonkey: 'monkey',
+    imgRabbit: 'rabbit',
+    imgTurtle: 'turtle',
+    imgBird: 'bird'
+};
+
+cards.forEach(bt => {
+    bt.addEventListener('click', (e) => {
+        cardChosen = idMap[e.target.id];
+        console.log(e.target.id);
+        card = e.target
+        checkMatch()
+    })
+});
+
+function checkMatch() {
+    if (cardChosen && nameChosen) {
+        if (cardChosen === nameChosen) {
+            showWellDone();
+            card.style.display = "none";
+            word.style.display = "none";
+
+        }
+        cardChosen = null;
+        nameChosen = null;
+    }
+}
