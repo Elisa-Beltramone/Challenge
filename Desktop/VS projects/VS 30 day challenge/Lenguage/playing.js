@@ -18,7 +18,8 @@ let timeStart = null;
 function gameStart() {
     timerId = setInterval(show, 0);
     timeStart = new Date();
-}
+};
+
 let timer = document.getElementById("time");
 let currentTime = null;
 let timeElapsed = null;
@@ -52,7 +53,8 @@ function showWellDone() {
     scoreElement.textContent = "Score: " + score + ". Well done!";
     if (score === 6) {
         scoreElement.textContent = "Your final score is: " + score + ". Congratulations!";
-        clearInterval(timerId);    }
+        clearInterval(timerId);
+    }
 };
 
 imgHorse.addEventListener("click", function () {
@@ -79,7 +81,7 @@ imgWhale.addEventListener("click", function () {
     imgWhale.style.border = '2px solid black';
 });
 
-
+// words color
 horse.addEventListener("click", function () {
     horse.style.color = 'green';
 });
@@ -104,26 +106,29 @@ whale.addEventListener("click", function () {
     whale.style.color = 'green';
 });
 
-document.getElementById('reset').addEventListener('click', function () {
-    location.reload();
-});
-
 let cardChosen = null;
 let nameChosen = null;
 let selected = null;
 let word = null;
-let card = null;
-
+let picture = null;
 
 const words = document.querySelectorAll('.name');
 const cards = document.querySelectorAll('.card');
 
 words.forEach(bt => {
     bt.addEventListener('click', (e) => {
-        nameChosen = e.target.id;
-        word = e.target;
-        console.log(e.target.id);
-        checkMatch();
+        if (nameChosen === null) {
+            nameChosen = e.target.id;
+            word = e.target;
+            console.log(e.target.id);
+            checkMatch();
+        } else {
+            word.style.color = '';
+            nameChosen = e.target.id;
+            word = e.target;
+            console.log(e.target.id);
+            checkMatch();
+        }
     })
 });
 
@@ -138,10 +143,16 @@ const idMap = {
 
 cards.forEach(bt => {
     bt.addEventListener('click', (e) => {
-        cardChosen = idMap[e.target.id];
-        console.log(e.target.id);
-        card = e.target
-        checkMatch()
+        if (cardChosen === null) {
+            cardChosen = idMap[e.target.id];
+            picture = e.target
+            checkMatch()
+        } else {
+            picture.style.border = '';
+            cardChosen = idMap[e.target.id];
+            picture = e.target
+            checkMatch()
+        }
     })
 });
 
@@ -149,11 +160,18 @@ function checkMatch() {
     if (cardChosen && nameChosen) {
         if (cardChosen === nameChosen) {
             showWellDone();
-            card.style.display = "none";
+            picture.style.display = "none";
             word.style.display = "none";
-
+        }
+        else {
+            picture.style.border = '';
+            word.style.color = '';
         }
         cardChosen = null;
         nameChosen = null;
     }
-}
+};
+
+document.getElementById('reset').addEventListener('click', function() {
+    location.reload();
+});
