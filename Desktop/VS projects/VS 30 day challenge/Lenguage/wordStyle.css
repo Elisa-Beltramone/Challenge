@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family:  sans-serif;
+    font-family: sans-serif;
 }
+
 body {
     background: linear-gradient(35deg, rgb(120, 17, 217), rgb(149, 8, 230));
     display: flex;
@@ -21,25 +22,25 @@ body {
     background-color: rgb(7, 147, 147);
     color: rgb(255, 255, 255);
     margin: 20px;
-    padding: 10px;
+    padding: 30px;
     justify-content: space-between;
-    max-width: 500px;
+}
+
+.exercise {
+    text-align: center;
+    padding: 5px;
+    max-width: 700px;
 }
 
 .practice {
     text-align: center;
-    padding: 10px;
-    cursor: pointer;
+    margin: 20px;
     color: rgb(169, 7, 26);
-}
-
-.column {
-    padding: 5px;    
 }
 
 button {
     margin: 20px 10px;
-    padding: 15px;
+    padding: 8px;
     cursor: pointer;
     background-color: rgb(59, 5, 67);
     color: white;
@@ -51,7 +52,18 @@ button:hover {
     background-color: rgb(109, 32, 135);
 }
 
-a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
+.names{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 15px;
+    font-size: 22px;
+    gap: 15px; 
+    color: rgb(91, 15, 124);
 }
+
+.names h3:hover{
+    color: rgb(8, 68, 90);
+    cursor: pointer;
+}
+
