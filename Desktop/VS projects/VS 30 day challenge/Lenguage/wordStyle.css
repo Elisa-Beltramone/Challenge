@@ -22,20 +22,24 @@ body {
     background-color: rgb(7, 147, 147);
     color: rgb(255, 255, 255);
     margin: 20px;
-    padding: 30px;
+    padding: 20px;
     justify-content: space-between;
 }
 
 .exercise {
     text-align: center;
     padding: 5px;
-    max-width: 700px;
 }
 
 .practice {
     text-align: center;
     margin: 20px;
     color: rgb(169, 7, 26);
+}
+
+.column {
+    display: flex;
+    gap: 20px; 
 }
 
 button {
@@ -52,17 +56,15 @@ button:hover {
     background-color: rgb(109, 32, 135);
 }
 
-.names{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 15px;
+.names{   
+    flex: auto;
+    padding: 20px;    
     font-size: 22px;
-    gap: 15px; 
     color: rgb(91, 15, 124);
+    padding: 15px;
 }
 
-.names h3:hover{
+.names:hover{
     color: rgb(8, 68, 90);
     cursor: pointer;
 }
