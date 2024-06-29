@@ -3,34 +3,7 @@ let english = true;
 let start = document.getElementById("game");
 let luck = document.getElementById("goodLuck");
 
-function play() {
-    if (english == true) {
-        playing.innerHTML = "Spielzeit";
-        english = false;
-    } else {
-        playing.innerHTML = "Playing time";
-        english = true;
-    }
-};
-
-let timeStart = null;
-
-function gameStart() {
-    timerId = setInterval(show, 0);
-    timeStart = new Date();
-};
-
-let timer = document.getElementById("time");
-let currentTime = null;
-let timeElapsed = null;
-function show() {
-    start.style.display = 'block';
-    luck.style.display = "none";
-    currentTime = new Date();
-    timeElapsed = currentTime - timeStart;
-    timer.innerHTML = Math.floor(timeElapsed / 1000) + "s";
-};
-
+// Images and words defined
 let horse = document.getElementById('horse');
 let rabbit = document.getElementById('rabbit');
 let turtle = document.getElementById('turtle');
@@ -45,18 +18,28 @@ let imgMonkey = document.getElementById('imgMonkey');
 let imgBird = document.getElementById('imgBird');
 let imgWhale = document.getElementById('imgWhale');
 
-let scoreElement = document.getElementById('score');
-let score = 0;
+//Selecting the answer
 
-function showWellDone() {
-    score = score + 1;
-    scoreElement.textContent = "Score: " + score + ". Well done!";
-    if (score === 6) {
-        scoreElement.textContent = "Your final score is: " + score + ". Congratulations!";
-        clearInterval(timerId);
-    }
+let cardChosen = null;
+let nameChosen = null;
+let selected = null;
+let word = null;
+let picture = null;
+
+const words = document.querySelectorAll('.name');
+const cards = document.querySelectorAll('.card');
+
+//Making them match
+const idMap = {
+    imgHorse: 'horse',
+    imgWhale: 'whale',
+    imgMonkey: 'monkey',
+    imgRabbit: 'rabbit',
+    imgTurtle: 'turtle',
+    imgBird: 'bird'
 };
 
+//Change border to pictures
 imgHorse.addEventListener("click", function () {
     imgHorse.style.border = '2px solid black';
 });
@@ -81,7 +64,7 @@ imgWhale.addEventListener("click", function () {
     imgWhale.style.border = '2px solid black';
 });
 
-// words color
+// Change the color of the words
 horse.addEventListener("click", function () {
     horse.style.color = 'green';
 });
@@ -106,14 +89,51 @@ whale.addEventListener("click", function () {
     whale.style.color = 'green';
 });
 
-let cardChosen = null;
-let nameChosen = null;
-let selected = null;
-let word = null;
-let picture = null;
+// Function for translating the title
 
-const words = document.querySelectorAll('.name');
-const cards = document.querySelectorAll('.card');
+function play() {
+    if (english == true) {
+        playing.innerHTML = "Spielzeit";
+        english = false;
+    } else {
+        playing.innerHTML = "Playing time";
+        english = true;
+    }
+};
+
+//Initialize time && set score
+let timeStart = null;
+
+function gameStart() {
+    timerId = setInterval(show, 0);
+    timeStart = new Date();
+};
+
+let timer = document.getElementById("time");
+let currentTime = null;
+let timeElapsed = null;
+function show() {
+    start.style.display = 'block';
+    luck.style.display = "none";
+    currentTime = new Date();
+    timeElapsed = currentTime - timeStart;
+    timer.innerHTML = Math.floor(timeElapsed / 1000) + "s";
+};
+
+// Setting up the score
+let scoreElement = document.getElementById('score');
+let score = 0;
+
+function showWellDone() {
+    score = score + 1;
+    scoreElement.textContent = "Score: " + score + ". Well done!";
+    if (score === 6) {
+        scoreElement.textContent = "Your final score is: " + score + ". Congratulations!";
+        clearInterval(timerId);
+    }
+};
+
+//Playing the game && selecting the word
 
 words.forEach(bt => {
     bt.addEventListener('click', (e) => {
@@ -132,14 +152,7 @@ words.forEach(bt => {
     })
 });
 
-const idMap = {
-    imgHorse: 'horse',
-    imgWhale: 'whale',
-    imgMonkey: 'monkey',
-    imgRabbit: 'rabbit',
-    imgTurtle: 'turtle',
-    imgBird: 'bird'
-};
+//Playing the game && selecting the card 
 
 cards.forEach(bt => {
     bt.addEventListener('click', (e) => {
@@ -156,6 +169,7 @@ cards.forEach(bt => {
     })
 });
 
+// Response
 function checkMatch() {
     if (cardChosen && nameChosen) {
         if (cardChosen === nameChosen) {
@@ -172,6 +186,7 @@ function checkMatch() {
     }
 };
 
+//Reset
 document.getElementById('reset').addEventListener('click', function() {
     location.reload();
 });

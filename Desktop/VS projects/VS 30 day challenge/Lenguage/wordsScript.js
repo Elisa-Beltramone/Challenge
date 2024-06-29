@@ -119,7 +119,7 @@ function showWords() {
     i++
   }
   printList();
-  document.getElementById("play").innerHTML = "New";
+  document.getElementById("play").style.display = "none";
   start = new Date();
   setInterval(time, 1000);
 };
@@ -130,6 +130,10 @@ function time() {
   let total = Math.floor((currentTime - start) / 1000);
   timer.innerHTML = `Time: ${total}`;
 };
+
+function giveId(){
+
+}
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -142,9 +146,23 @@ function shuffleArray(array) {
 function printList(){
   germanList = shuffleArray(germanList);
   englishList = shuffleArray(englishList);
-  germanDisplay.innerHTML = germanList.join("<br/>");
-  englishDisplay.innerHTML = `${englishList.join("<br/>")}`;
-};
+  console.log(Object.keys(germanList));
+
+  germanList.forEach(function(word) {
+    let paragraph = document.createElement('p');
+    paragraph.textContent = word;
+    germanDisplay.appendChild(paragraph);
+});
+
+englishList.forEach(function(word) {
+  let paragraph = document.createElement('p');
+  paragraph.textContent = word;
+  englishDisplay.appendChild(paragraph);
+});
+
+console.log(englishList);
+console.log(germanList);
+}
 
 
 

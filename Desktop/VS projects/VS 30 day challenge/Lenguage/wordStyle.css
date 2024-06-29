@@ -24,6 +24,7 @@ body {
     margin: 20px;
     padding: 20px;
     justify-content: space-between;
+    min-width: 400px;
 }
 
 .exercise {
@@ -61,11 +62,12 @@ button:hover {
     padding: 20px;    
     font-size: 22px;
     color: rgb(91, 15, 124);
-    padding: 15px;
+    padding: 20px;
 }
 
-.names:hover{
-    color: rgb(8, 68, 90);
+.names p:hover{
+    font-weight: bold;
+    color: rgb(6, 70, 63);
     cursor: pointer;
 }
 
