@@ -105,23 +105,32 @@ const germanWords = [
 ];
 
 let start = "";
-let germanList = [];
+let germanList = {};
 let englishList = [];
+
+// Make random words and start time
 
 function showWords() {
   let i = 0;
   germanList = [];
   englishList = [];
-  while (i < 10){
-    let x = Math.round(Math.random() *100 +1);
-    germanList.push(germanWords[x].german);
-    englishList.push(germanWords[x].english);
+  while (i < 10) {
+    let x = Math.round(Math.random() * 100 + 1);
+    let wordAdded = {
+      [i]: germanWords[x].german
+    };
+    let wordAddedEnglish = {
+      [i]: germanWords[x].english
+    };
+    germanList.push(wordAdded);
+    englishList.push(wordAddedEnglish);
     i++
   }
   printList();
   document.getElementById("play").style.display = "none";
   start = new Date();
   setInterval(time, 1000);
+  reset();
 };
 
 function time() {
@@ -131,40 +140,65 @@ function time() {
   timer.innerHTML = `Time: ${total}`;
 };
 
-function giveId(){
+// Check the score
 
-}
+// Change the order
 
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
 }
 
-function printList(){
+// Show list of words
+
+function printList() {
   germanList = shuffleArray(germanList);
   englishList = shuffleArray(englishList);
-  console.log(Object.keys(germanList));
 
-  germanList.forEach(function(word) {
+  for (i in germanList) {
+    let germanValues = Object.values(germanList[i]);
+    germanValues.forEach(function (word) {
+      let paragraph = document.createElement('p');
+      let uniqueId = `${word}`;
+      paragraph.Id = uniqueId;
+      paragraph.textContent = word;
+      germanDisplay.appendChild(paragraph);
+    });
+  }
+
+  englishList.forEach(function (word) {
     let paragraph = document.createElement('p');
     paragraph.textContent = word;
-    germanDisplay.appendChild(paragraph);
-});
-
-englishList.forEach(function(word) {
-  let paragraph = document.createElement('p');
-  paragraph.textContent = word;
-  englishDisplay.appendChild(paragraph);
-});
-
-console.log(englishList);
-console.log(germanList);
+    englishDisplay.appendChild(paragraph);
+  });
 }
 
+// Check if cliked
 
+germanDisplay.addEventListener('click', function(event) {
+  if (event.target.tagName === 'P') {
+      console.log('A paragraph was clicked:', event.target.textContent);
+      event.target.style.color = 'red';
+  }
+});
+englishDisplay.addEventListener('click', function(event) {
+  if (event.target.tagName === 'P') {
+    console.log('A paragraph was clicked:', event.target.textContent);
+    event.target.style.color = 'pink';
+}
+});
 
+// Reset
+function reset() {
+  let restart = document.getElementById("restart");
+  let startAgain = document.createElement('button');
+  startAgain.textContent = "Restart";
+  restart.append(startAgain);
 
-
+  restart.addEventListener('click', function () {
+    location.reload();
+  })
+}
