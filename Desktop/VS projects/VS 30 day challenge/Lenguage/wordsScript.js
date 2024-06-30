@@ -107,6 +107,9 @@ const germanWords = [
 let start = "";
 let germanList = {};
 let englishList = [];
+let score = document.getElementById("score");
+let points = 0;
+let timerId = 0;
 
 // Make random words and start time
 
@@ -129,7 +132,7 @@ function showWords() {
   printList();
   document.getElementById("play").style.display = "none";
   start = new Date();
-  setInterval(time, 1000);
+  timerId = setInterval(time, 1000);
   reset();
 };
 
@@ -139,8 +142,6 @@ function time() {
   let total = Math.floor((currentTime - start) / 1000);
   timer.innerHTML = `Time: ${total}`;
 };
-
-// Check the score
 
 // Change the order
 
@@ -169,27 +170,77 @@ function printList() {
     });
   }
 
-  englishList.forEach(function (word) {
-    let paragraph = document.createElement('p');
-    paragraph.textContent = word;
-    englishDisplay.appendChild(paragraph);
-  });
+  for (i in englishList) {
+    let englishValues = Object.values(englishList[i]);
+    englishValues.forEach(function (word) {
+      let paragraph = document.createElement('p');
+      let uniqueId = `${word}`;
+      paragraph.Id = uniqueId;
+      paragraph.textContent = word;
+      englishDisplay.appendChild(paragraph);
+    });
+  }
 }
 
 // Check if cliked
+let word1 = null;
+let word2 = null;
 
-germanDisplay.addEventListener('click', function(event) {
+let selectedWord1 = null;
+let selectedWord2 = null;
+
+let selectedObject1 = null;
+let selectedObject2 = null;
+
+germanDisplay.addEventListener('click', function (event) {
   if (event.target.tagName === 'P') {
-      console.log('A paragraph was clicked:', event.target.textContent);
-      event.target.style.color = 'red';
+    word1 = event.target;
+    event.target.style.color = 'red';
+    selectedWord1 = event.target.textContent;
   }
+  matchCheck()
 });
-englishDisplay.addEventListener('click', function(event) {
+
+englishDisplay.addEventListener('click', function (event) {
   if (event.target.tagName === 'P') {
-    console.log('A paragraph was clicked:', event.target.textContent);
+    word2 = event.target;
     event.target.style.color = 'pink';
-}
+    selectedWord2 = event.target.textContent;
+  }
+  matchCheck()
 });
+
+// Check if match && the score
+
+function matchCheck() {
+
+  selectedObject1 = germanWords.find(obj => obj.german === selectedWord1);
+  selectedObject2 = germanWords.find(obj => obj.english === selectedWord2);
+
+  if ( word1.style.color != 'green') {
+    if (selectedObject1 === selectedObject2) {
+      points++;
+      score.innerHTML = points;
+      word1.style.color = 'green';
+      word2.style.color = 'green';
+      if (points == 10){
+        germanDisplay.style.display = "none";
+        englishDisplay.style.display = "none";
+        score.textContent = "Congratulations, you won!";
+        clearInterval(timerId);
+      }
+    } 
+  }
+
+
+  // else {
+  //   word1.style.color = '';
+  //   word2.style.color = '';
+  // }
+
+  // cardChosen = null;
+  // nameChosen = null;
+}
 
 // Reset
 function reset() {
