@@ -214,22 +214,26 @@ englishDisplay.addEventListener('click', function (event) {
 
 function matchCheck() {
 
-  selectedObject1 = germanWords.find(obj => obj.german === selectedWord1);
-  selectedObject2 = germanWords.find(obj => obj.english === selectedWord2);
+  selectedObject1 = germanWords.findIndex(obj => obj.german === selectedWord1);
+  selectedObject2 = germanWords.findIndex(obj => obj.english === selectedWord2);
+  console.log(selectedWord1);
+  console.log(selectedObject2);
+  console.log(englishList);
+  console.log(germanList);
 
-  if ( word1.style.color != 'green') {
+  if (word1.style.color !== 'green') {
     if (selectedObject1 === selectedObject2) {
       points++;
       score.innerHTML = points;
       word1.style.color = 'green';
       word2.style.color = 'green';
-      if (points == 10){
+      if (points == 10) {
         germanDisplay.style.display = "none";
         englishDisplay.style.display = "none";
         score.textContent = "Congratulations, you won!";
         clearInterval(timerId);
       }
-    } 
+    }
   }
 
 
